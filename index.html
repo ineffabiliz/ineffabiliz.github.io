@@ -48,8 +48,7 @@
        top: 0;
        z-index: 1000;
     
-     Black gradient (darker at top) 
-    background: linear-gradient(
+      background: linear-gradient(
         to bottom, 
         rgba(0,0,0,0.6), 
         rgba(0,0,0,0.4)
@@ -60,13 +59,31 @@
     -webkit-backdrop-filter: blur(12px); /* Safari support */
     
     /* Thin frame */
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(1,19,13,0.3);
     
     /* Perfectly aligns with header bg */
     margin: 0;
-    padding: 0.5rem 0;
+    /* padding: 0.5rem 0; */
+    padding: 10px 0;
+
+}
+       
+.nav-container {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    backdrop-filter: blur(10px);
+    border-radius: 25px; /* Rounded ends */
+    padding: 5px 25px; /* Horizontal padding */
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
+       .nav-logo {
+       height: 30px; /* Adjust as needed */
+       width: auto;
+       margin-right: 20px; /* Space between logo and links */
+      }
+       
 .nav-links {
     display: flex;
     justify-content: center;
@@ -219,13 +236,16 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="nav-bar">
+    <div class="nav-container"> <!-- New container for constrained width -->
+        <img src="icon.png" alt="Logo" class="nav-logo">
         <ul class="nav-links">
             <li><a href="#">About</a></li>
             <li><a href="#">Botanic</a></li>
             <li><a href="#">Zoologic</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-    </nav>
+    </div>
+   </nav>
     
     <!-- Hero Section -->
     <header>
