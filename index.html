@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Smooch+Sans:wght@100;400;600&display=swap" rel="stylesheet">
     
     <style>
+        /* Base Styles */
         body {
             font-family: 'Smooch Sans', sans-serif;
             font-weight: 400;
@@ -21,6 +22,72 @@
             background-color: #f9f7f0;
         }
         
+        /* Navigation Bar */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #a8d8b9;
+        }
+        
+        /* Hero Section with Background Image */
+        header {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1533234427049-d6a6a0ad1a4f?ixlib=rb-4.0.3&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            z-index: -1;
+        }
+        
+        /* Typography */
         h1, h2, h3 {
             font-family: 'Bodoni Moda', serif;
             font-weight: 700;
@@ -32,14 +99,6 @@
             font-weight: 400;
         }
         
-        header {
-            background-color: #2a5a3a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            border-bottom: 5px solid #5a3a1e;
-        }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -47,9 +106,10 @@
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         h2 {
@@ -65,9 +125,11 @@
         }
         
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
+        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -93,6 +155,7 @@
             border-bottom: 1px solid #eee;
         }
         
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -104,15 +167,30 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Botanic</a></li>
+            <li><a href="#">Zoologic</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
     <header>
+        <div class="header-bg"></div>
+        <div class="header-overlay"></div>
         <div class="container">
-            <h1>IllustraNatura</h1>
-            <p class="subtitle">El Balance Entre Arte y Ciencia</p>
+            <h1>Nature's Canvas</h1>
+            <p class="subtitle">Botanical & Zoological Illustrations Through the Ages</p>
         </div>
     </header>
     
+    <!-- Main Content -->
     <div class="container">
         <section>
+            <h2>About This Collection</h2>
             <p>Explore the intersection of art and science through historical and contemporary illustrations of flora and fauna. This digital archive showcases works from the 15th century to present day.</p>
         </section>
         
@@ -139,7 +217,8 @@
     
     <footer>
         <div class="container">
-            <p>© 2025 IllustraNatura</p>
+            <p>© 2023 Nature's Canvas | Created for GitHub Pages</p>
+            <p>All images used for educational demonstration purposes</p>
         </div>
     </footer>
 </body>
