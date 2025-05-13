@@ -308,8 +308,8 @@ footer {
     height: 130%; /* Extra height for parallax effect */
      background-image: 
         linear-gradient(to bottom, 
-            rgba(1, 19, 13, 0.1),  /* Slight tint at top */
-            rgba(1, 19, 13, 0.5)   /* Darker tint at bottom */
+            rgba(1, 19, 13, 0.3),  /* Slight tint at top */
+            rgba(1, 19, 13, 0.6)   /* Darker tint at bottom */
         ),
         url('../parallax-bg.jpg');
     background-size: cover;
@@ -328,7 +328,7 @@ footer {
     width: 30%;
     height: 40%;
     max-width: 350px;
-    background-color: rgba(1, 19, 13, 0.6);
+    background-color: rgba(1, 19, 13, 0.4);
     padding: 2rem;
     border-radius: 8px;
 }
