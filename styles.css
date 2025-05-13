@@ -341,10 +341,10 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    width: 20%;
-    height: 10%;
+    width: 35%;
+    height: 26%;
     max-width: 500px;
-    max-height: 210px;
+    max-height: 260px;
     background-color: rgba(1, 19, 13, 0.7);
     padding: 2rem;
     border-radius: 8px;
