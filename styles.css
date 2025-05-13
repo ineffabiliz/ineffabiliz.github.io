@@ -302,7 +302,7 @@ footer {
 
 .parallax-bg {
     position: absolute;
-    top: 50;
+    top: -30;
     left: 0;
     width: 100%;
     height: 120%;
@@ -344,6 +344,7 @@ footer {
     width: 20%;
     height: 20%;
     max-width: 500px;
+    max-height: 200px;
     background-color: rgba(1, 19, 13, 0.7);
     padding: 2rem;
     border-radius: 8px;
