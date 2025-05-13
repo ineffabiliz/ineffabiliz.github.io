@@ -44,41 +44,34 @@
           transform: scale(1.05);
       } 
         
-        /* Updated Navigation Bar with Semi-Transparency */
-      .nav-bar {
-       position: sticky;
-       top: 0;
-       z-index: 1000;
-       justify-content: center; /* Centers the contained content */
-
-    /* 
-      background: linear-gradient(
-        to bottom, 
-        rgba(0,0,0,0.2), 
-        rgba(0,0,0,0.1) */
-    ); */
-    
-    /* Glass effect */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
-    
-    /* Thin frame */
-    /*border-bottom: 1px solid rgba(1,19,13,0.3);*/
-    
-    /* Perfectly aligns with header bg */
+       /* Fixed Navigation Bar */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centers the container */
+    width: 100%;
     margin: 0;
-    /* padding: 0.5rem 0; */
     padding: 10px 0;
-
+    background: transparent; /* Remove any background from the bar itself */
 }
-       
+
 .nav-container {
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(1,19,13,0.2), rgba(1,19,13,0.1)); */
+    background: linear-gradient(to bottom, rgba(1,19,13,0.7), rgba(1,19,13,0.4));
     backdrop-filter: blur(10px);
-    padding: 5px 25px; /* Horizontal padding */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px; /* Rounded corners */
+    padding: 8px 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    /* Container will now shrink-to-fit content */
+    width: auto;
+    max-width: 90%; /* Prevents touching screen edges on mobile */
 }
+
+/* Keep all your existing .nav-logo and .nav-links styles */
 
        .nav-logo {
        height: 30px; /* Adjust as needed */
