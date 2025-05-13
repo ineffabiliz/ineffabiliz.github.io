@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
 body {
     font-family: 'Smooch Sans', sans-serif;
     font-weight: 400;
@@ -34,8 +40,10 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 100%;
+    margin: 0;
+    padding: 0;
     background: #E0D8C0 url('../header.png') no-repeat center center/cover;
     z-index: -1;
 }
@@ -81,7 +89,7 @@ header .subtitle {
 
 /* ===== NAVIGATION BAR ===== */
 .nav-bar {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     display: flex;
