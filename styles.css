@@ -324,9 +324,10 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    width: 50%;
-    max-width: 600px;
-    background-color: rgba(1, 19, 13, 0.7);
+    width: 30%;
+    height: 40%;
+    max-width: 350px;
+    background-color: rgba(1, 19, 13, 0.6);
     padding: 2rem;
     border-radius: 8px;
 }
