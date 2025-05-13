@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IllustraNatura| Ilustración Científica</title>
+    <title>Illustra</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,23 @@
        header {
           margin-top: 0 !important;
       }
+       .header-logo {
+       height: 80px; /* Adjust as needed */
+       width: auto; /* Maintain aspect ratio */
+       margin-top: 15px; /* Space below title */
+       /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));  Optional subtle shadow */
+      }
+       @media (max-width: 768px) {
+       .header-logo {
+           height: 60px;
+       }
+      }
+       .header-logo {
+       transition: transform 0.3s ease;
+         }
+      .header-logo:hover {
+          transform: scale(1.05);
+      } 
         
         /* Updated Navigation Bar with Semi-Transparency */
       .nav-bar {
@@ -216,7 +233,8 @@
         <div class="header-overlay"></div>
         <div class="container">
             <h1>IllustraNatura</h1>
-            <p class="subtitle">Balance entre Arte & Ciencia</p>
+         <!-- <p class="subtitle">Balance entre Arte & Ciencia</p> -->
+            <img src="icono2.png" alt="Nature's Canvas Logo" class="header-logo">
         </div>
     </header>
     
