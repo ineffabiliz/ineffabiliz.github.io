@@ -311,7 +311,7 @@ footer {
             rgba(1, 19, 13, 0.2),  /* Slight tint at top */
             rgba(1, 19, 13, 0.6)   /* Darker tint at bottom */
         ),
-        url('../parallax-bg.jpg');
+        url('../parallax.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
