@@ -305,7 +305,7 @@ footer {
     left: 0;
     width: 100%;
     height: 120%; /* Extra height for parallax effect */
-    background-image: url('../images/parallax-bg.jpg'); /* Your new image */
+    background-image: url('../parallax-.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Creates parallax */
