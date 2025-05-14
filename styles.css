@@ -337,21 +337,6 @@ footer {
     z-index: -1;
 }
 
-/* Optional: Enhance the gradient effect */
-/*
-.parallax-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    background: linear-gradient(to bottom, 
-        transparent, 
-        rgba(1, 19, 13, 0.5)
-    );
-    pointer-events: none;
-} */
 
 .parallax-content {
     position: absolute;
@@ -379,11 +364,15 @@ footer {
     transition: color 0.3s ease;
     position: relative; /* For optional underline effect */
 }
-
+.parallax-content h2 {
+    position: relative;
+    top: -10px; /* Nudge upward */
+}
+/*
 .parallax-content h2 a:hover {
     color: #a8d8b9; /* Your accent color */
     text-decoration: underline; /* Or use the effect below */
-}
+}*/
 
 /* Optional fancy hover effect */
 .parallax-content h2 a::after {
