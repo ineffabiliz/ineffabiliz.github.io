@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Same head as index.html -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botánica | Illustra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Smooch+Sans:wght@100;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Same Google Fonts as index -->
+    <style>
+        /* Page-specific styles */
+        .botanica-header {
+            height: 60vh;
+            min-height: 500px;
+        }
+        
+        .botanica-content {
+            padding: 4rem 0;
+            line-height: 1.8;
+        }
+        
+        .botanica-content .container {
+            max-width: 800px;
+        }
+        
+        .specimen-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="botanica-page">
     <!-- Simplified Navigation -->
     <nav class="nav-bar">
         <div class="nav-container">
@@ -30,25 +55,47 @@
         </div>
     </header>
 
-    <!-- Your Unique Content Section -->
+    <!-- Main Content -->
     <main class="botanica-content">
         <div class="container">
-            <!-- Add your custom content here -->
             <section class="intro-text">
-                <h2>Sobre nuestro trabajo botánico</h2>
-                <p>Texto descriptivo sobre ilustración botánica...</p>
+                <h2>Arte al servicio de la ciencia</h2>
+                <p>Nuestras ilustraciones botánicas combinan rigor científico con sensibilidad artística, capturando la esencia de cada especie con detalle milimétrico y composición armoniosa.</p>
             </section>
+            
+            <div class="specimen-card">
+                <h3>Flora Nativa</h3>
+                <p>Documentación de especies autóctonas con énfasis en características distintivas para identificación científica.</p>
+            </div>
+            
+            <div class="specimen-card">
+                <h3>Detalles Anatómicos</h3>
+                <p>Representación de estructuras florales, hojas y sistemas radiculares con escalas de aumento.</p>
+            </div>
         </div>
     </main>
 
-    <!-- Reused Contact Section -->
+    <!-- Contact Section -->
     <section id="contacto" class="contact">
-        <!-- Same contact section as index.html -->
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="social-icons">
+                <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
+                    <img src="imgs/ig.png" alt="Instagram">
+                </a>
+                <a href="mailto:ineffabiliz+terra@gmail.com" class="social-icon">
+                    <img src="imgs/mail.png" alt="Email">
+                    <span>ineffabiliz+terra@gmail.com</span>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- Same Footer as index.html -->
+    <!-- Footer -->
     <footer>
-        <!-- Your existing footer -->
+        <div class="container">
+            <p>© 2023 Illustra | Ilustración científica</p>
+        </div>
     </footer>
 </body>
 </html>
