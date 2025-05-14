@@ -494,10 +494,7 @@ footer {
     font-size: 0.8rem;
     opacity: 0;
     transition: opacity 0.3s;
-    white-space: nowrap;
+   
 }
 
-.email-copy:hover .tooltip {
-    opacity: 1;
-}
 
