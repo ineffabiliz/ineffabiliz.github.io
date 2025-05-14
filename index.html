@@ -14,34 +14,42 @@
 
 </head>
 
-  <script>
+ <script>
 document.querySelector('.email-copy').addEventListener('click', async function(e) {
-    e.preventDefault(); // Prevent default button behavior
+    e.preventDefault();
     const email = this.getAttribute('data-email');
     
     try {
+        // Modern clipboard API
         await navigator.clipboard.writeText(email);
-        const tooltip = this.querySelector('.tooltip');
-        tooltip.textContent = '¡Copiado!';
-        setTimeout(() => {
-            tooltip.textContent = 'Click to copy';
-        }, 2000);
+        showCopiedFeedback(this);
     } catch (err) {
-        // Fallback for browsers without Clipboard API
+        // Fallback for older browsers
         const textarea = document.createElement('textarea');
         textarea.value = email;
+        textarea.style.position = 'fixed';  // Prevent scrolling
         document.body.appendChild(textarea);
         textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
         
-        const tooltip = this.querySelector('.tooltip');
-        tooltip.textContent = '¡Copiado!';
-        setTimeout(() => {
-            tooltip.textContent = 'Click to copy';
-        }, 2000);
+        try {
+            document.execCommand('copy');
+            showCopiedFeedback(this);
+        } catch (err) {
+            alert('No se pudo copiar el email: ' + email); // Fallback message
+        } finally {
+            document.body.removeChild(textarea);
+        }
     }
 });
+
+function showCopiedFeedback(button) {
+    const tooltip = button.querySelector('.tooltip');
+    const originalText = tooltip.textContent;
+    tooltip.textContent = '¡Copiado!';
+    setTimeout(() => {
+        tooltip.textContent = originalText;
+    }, 2000);
+}
 </script>
    
 <body>
@@ -124,15 +132,14 @@ document.querySelector('.email-copy').addEventListener('click', async function(e
     <div class="container">
         <h2>Contacto</h2>
         <div class="social-icons">
-            <!-- Social Media Icons -->
-            <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
-                <img src="imgs/ig.png" alt="Instagram" width="24">
+            <a href="https://instagram.com/inefable_velandia" 
+               target="_blank" 
+               class="social-icon">
+                <img src="imgs/ig.png" alt="Instagram">
             </a>
-           
-            
-            <!-- Email Copy Button -->
-            <button class="social-icon email-copy" data-email="ineffabiliz+terra@gmail.com">
-                <img src="imgs/mail.png" alt="Copy Email" width="24">
+            <button class="social-icon email-copy" 
+                    data-email="ineffabiliz+terra@gmail.com">
+                <img src="imgs/mail.png" alt="Copy Email">
                 <span class="tooltip">Click to copy</span>
             </button>
         </div>
