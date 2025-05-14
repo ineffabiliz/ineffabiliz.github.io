@@ -238,7 +238,7 @@ h3 {
 /* ===== GALLERY ===== */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Increased min width */
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -250,6 +250,9 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    display: flex; /* New */
+    flex-direction: column; /* New */
+    height: 100%; /* New */
 }
 
 .illustration:hover {
@@ -258,8 +261,16 @@ h3 {
 
 .illustration img {
     width: 100%;
-    height: auto;
+    height: 443px; /* Fixed height matching your images */
+    object-fit: cover; /* Ensures no distortion */
     border-bottom: 1px solid #eee;
+    border-radius: 4px; /* Optional */
+}
+
+/* Optional: Add caption container */
+.illustration figcaption {
+    padding: 1rem 0 0;
+    margin-top: auto; /* Pushes caption to bottom */
 }
 
 /* ===== FOOTER ===== */
