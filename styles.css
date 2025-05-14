@@ -427,17 +427,6 @@ footer {
     text-decoration: underline; /* Or use the effect below */
 }
 
-/* Optional fancy hover effect 
-.parallax-content h2 a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #a8d8b9;
-    transition: width 0.3s ease;
-} */
 
 .parallax-content h2 a:hover::after {
     width: 100%;
@@ -454,3 +443,61 @@ footer {
         background-attachment: scroll; /* Disable parallax on mobile */
     }
 }
+
+/* ========CONTACT======  */
+
+/* Contact Section */
+.contact {
+    padding: 3rem 0;
+    background: rgba(1, 19, 13, 0.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(1, 19, 13, 0.8);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icon:hover {
+    background: rgba(1, 19, 13, 1);
+    transform: translateY(-3px);
+}
+
+.social-icon img {
+    filter: brightness(0) invert(1);
+}
+
+/* Email Tooltip */
+.tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.email-copy:hover .tooltip {
+    opacity: 1;
+}
+
+
