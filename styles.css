@@ -450,6 +450,7 @@ footer {
 .contact {
     padding: 3rem 0;
     background: rgba(1, 19, 13, 0.1);
+    text-align: center;
 }
 
 .social-icon {
