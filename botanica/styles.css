@@ -115,12 +115,12 @@ header {
 
 .header-bg {
     position: relative;
-    top: 30;
+    top: 0;
     left: 0;
     padding: 0;
     margin: 0;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: auto;
     background: #E0D8C0 url('imgs/botanica-bg.png') no-repeat center center/cover;
     z-index: -1;
 }
