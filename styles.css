@@ -235,36 +235,39 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
-    /*margin-top: 3rem; */
+    position: relative; /* New: Contains absolute positioned elements */
+    z-index: 1; /* New: Creates stacking context */
 }
 
 .illustration {
+    position: relative; /* Keep this */
     background: white;
     border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    /* Force landscape container */
-    aspect-ratio: 640/443; /* ≈1.44 (matches your images) */
-    overflow: hidden; /* Hide anything beyond container */
+    aspect-ratio: 640/443;
+    overflow: hidden; /* Crucial: clips overflowing content */
 }
 
 /* ----Hover---- */
-
-.illustration:hover {
-    transform: translateY(-5px);
-}
 
 .illustration figcaption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(1, 19, 13, 0.2); /* Dark semi-transparent background */
+    background: rgba(1, 19, 13, 0.8);
     color: white;
     padding: 1rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    z-index: 2; /* New: ensures caption stays above image */
 }
+
+.illustration:hover figcaption {
+    transform: translateY(0);
+}
+
 .illustration h3,
 .illustration p {
     margin: 0.3rem 0;
@@ -278,8 +281,10 @@ h3 {
 .illustration img {
     width: 100%;
     height: 100%;
-    /*object-fit: contain; /* Show full image without cropping */
+    object-fit: cover;
     display: block;
+    position: relative; /* New: contains caption */
+    z-index: 1; /* New: layers properly */
 }
 
 
@@ -294,7 +299,14 @@ h3 {
 @media (max-width: 768px) {
     .illustration figcaption {
         transform: translateY(0);
-        background: rgba(1, 19, 13, 0.9); /* Slightly more opaque on mobile */
+        background: rgba(1, 19, 13, 0.9);
+    }
+    
+    /* Prevent text overlap */
+    .illustration h3, 
+    .illustration p {
+        white-space: normal;
+        overflow: visible;
     }
 }
 
