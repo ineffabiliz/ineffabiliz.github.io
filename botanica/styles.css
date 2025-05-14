@@ -247,10 +247,10 @@ footer {
 #manual-carousel {
     width: 100%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 10px auto;
     position: relative;
     overflow: hidden;
-    margin-left: 1vw;
+    margin-left: 10vw;
 
 }
 
@@ -262,7 +262,7 @@ footer {
 #manual-carousel .carousel-slide {
     flex-shrink: 0;
     padding: 0 10px;
-    width: calc(100% / 3);
+    width: calc(99%);
 }
 
 #manual-carousel .carousel-slide img {
