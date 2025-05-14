@@ -259,12 +259,12 @@ footer {
 
 /* MANUAL CAROUSEL STYLES */
 #manual-carousel {
-    width: 110%;
+    width: 100%;
     max-width: 1200px;
     margin: 30px auto;
     position: relative;
     overflow: hidden;
-    margin-left: -5vw;
+    margin-left: 1vw;
 
 }
 
@@ -280,7 +280,7 @@ footer {
 }
 
 #manual-carousel .carousel-slide img {
-    width: 105%;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 8px;
