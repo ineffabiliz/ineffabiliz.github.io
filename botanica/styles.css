@@ -25,9 +25,10 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-h3 {
-    font-size: 0.9rem;
+h1 {
+    font-size: 2rem;
     margin: 0.5rem 0 0.5rem;
+    color: black;
 }
 
 /* ===== NAVIGATION ===== */
