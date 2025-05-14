@@ -33,12 +33,13 @@ h1 {
 
 /* ===== NAVIGATION ===== */
 .nav-bar {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
     width: 100%;
+    margin: 0;
     padding: 10px 0;
     background: transparent;
 }
@@ -48,6 +49,7 @@ h1 {
     align-items: center;
     background: linear-gradient(to bottom, rgba(1,19,13,0.3), rgba(1,19,13,0.2));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 30px;
     padding: 8px 25px;
     border: 1px solid rgba(255,255,255,0.1);
