@@ -456,7 +456,6 @@ footer {
     background: transparent !important; /* No background */
     width: auto; /* Natural icon size */
     height: auto;
-    border-radius: 0;
     padding: 0.5rem;
 }
 
@@ -481,6 +480,14 @@ footer {
 .email-copy {
     position: relative;
 }
+.email-copy {
+    background: transparent !important;
+    border: none; /* Remove default button styles */
+    outline: none; /* Remove focus outline */
+    cursor: pointer;
+    padding: 0; /* Remove extra padding */
+    margin: 0; /* Remove extra margin */
+}
 
 .tooltip {
     position: absolute;
@@ -494,7 +501,8 @@ footer {
     font-size: 0.8rem;
     opacity: 0;
     transition: opacity 0.3s;
-   
+    pointer-events: none; /* Prevents tooltip from interfering with clicks */
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
 
