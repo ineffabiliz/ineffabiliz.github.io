@@ -28,7 +28,19 @@ body {
     p {text-align: center;}
     h3 {text-align: center;}
 }
+.inline-link {
+    color: #a8d8b9; /* Match your link color */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    display: inline; /* Ensures it stays in line */
+    padding: 0; /* Remove any default spacing */
+    list-style: none; /* Remove bullet points */
+}
 
+.inline-link:hover {
+    color: #8cc7a1; /* Slightly lighter on hover */
+    text-decoration: none;
+}
 /* ===== HEADER SECTION ===== */
 header {
     position: relative;
