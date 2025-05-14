@@ -448,7 +448,7 @@ footer {
 
 /* Contact Section */
 .contact {
-    padding: 3rem 0;
+    padding: 1rem 0;
     background: rgba(1, 19, 13, 0.1);
     text-align: center;
 }
@@ -506,7 +506,7 @@ social-icons {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 .email-display {
     display: flex;
