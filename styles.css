@@ -231,7 +231,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1rem 0 0.5rem;
 }
 
@@ -263,7 +263,7 @@ h3 {
     right: 0;
     background: rgba(1, 19, 13, 0.6);
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     z-index: 2; /* New: ensures caption stays above image */
@@ -275,7 +275,7 @@ h3 {
 
 .illustration h3,
 .illustration p {
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
     color: white;
 }
 
