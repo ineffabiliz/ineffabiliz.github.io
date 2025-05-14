@@ -31,12 +31,6 @@ h1 {
     color: black;
 }
 
-.container {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
 /* ===== NAVIGATION ===== */
 .nav-bar {
     position: sticky;
@@ -135,7 +129,6 @@ header {
     height: 100%;
     padding: 0;
     margin: 0;
-    background-size: cover;
     background-position: center;
     z-index: -1;
 }
