@@ -334,15 +334,6 @@ header h1 {
     object-fit: cover; /* Change from 'contain' to fill container */
 }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #01130d;
-    color: white;
-    margin-top: 3rem;
-    font-weight: 600;
-}
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
@@ -524,5 +515,13 @@ social-icons {
     }
 }
 
-
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #01130d;
+    color: white;
+    margin-top: 1rem;
+    font-weight: 600;
+}
 
