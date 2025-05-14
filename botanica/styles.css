@@ -27,7 +27,7 @@ h2 {
 
 h1 {
     font-size: 2rem;
-    margin: 0.5rem 0 0.5rem;
+    margin: 2.5rem 0 2.5rem;
     color: black;
 }
 
@@ -115,7 +115,7 @@ header {
 
 .header-bg {
     position: absolute;
-    top: 0;
+    top: 10;
     left: 0;
     width: 90%;
     height: 90%;
