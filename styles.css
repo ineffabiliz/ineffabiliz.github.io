@@ -22,6 +22,7 @@ body {
     background-color: rgb(1, 19, 13);
     h2 {text-align: center;}
     p {text-align: center;}
+    h3 {text-align: center;}
 }
 
 /* ===== HEADER SECTION ===== */
@@ -256,7 +257,7 @@ h3 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(1, 19, 13, 0.8);
+    background: rgba(1, 19, 13, 0.6);
     color: white;
     padding: 1rem;
     transform: translateY(100%);
@@ -271,7 +272,7 @@ h3 {
 .illustration h3,
 .illustration p {
     margin: 0.3rem 0;
-    color: black;
+    color: white;
 }
 
 .illustration:hover figcaption {
