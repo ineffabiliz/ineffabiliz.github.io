@@ -477,33 +477,29 @@ footer {
     opacity: 1;
 }
 
-/* Email tooltip adjustment */
-.email-copy {
-    position: relative;
+/* Email  adjustment */
+
+.email-display img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
 }
-.email-copy {
-    background: transparent !important;
-    border: none; /* Remove default button styles */
-    outline: none; /* Remove focus outline */
-    cursor: pointer;
-    padding: 0; /* Remove extra padding */
-    margin: 0; /* Remove extra margin */
+social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.email-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 1rem;
+    color: white;
 }
 
-.tooltip {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 0px;
-    font-size: 0.8rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none; /* Prevents tooltip from interfering with clicks */
-    white-space: nowrap; /* Prevents text wrapping */
-}
 
 
