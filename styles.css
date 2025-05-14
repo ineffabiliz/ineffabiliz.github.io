@@ -466,7 +466,7 @@ footer {
 }
 
 .social-icon img {
-    filter: none; /* Keep original icon colors */
+    filter: brightness(0) invert(1);
     width: 28px; /* Slightly larger */
     height: 28px;
     opacity: 0.8;
@@ -483,9 +483,21 @@ footer {
 }
 
 .tooltip {
-    /* Keep your existing tooltip styles */
-    font-size: 0.7rem;
-    bottom: -25px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 0px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
+.email-copy:hover .tooltip {
+    opacity: 1;
+}
 
