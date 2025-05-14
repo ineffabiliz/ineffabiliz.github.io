@@ -363,13 +363,13 @@ footer {
     position: relative;
     top: -10px; /* Nudge upward */
 }
-/*
+
 .parallax-content h2 a:hover {
     color: #a8d8b9; /* Your accent color */
     text-decoration: underline; /* Or use the effect below */
-}*/
+}
 
-/* Optional fancy hover effect */
+/* Optional fancy hover effect 
 .parallax-content h2 a::after {
     content: '';
     position: absolute;
@@ -379,7 +379,7 @@ footer {
     left: 0;
     background-color: #a8d8b9;
     transition: width 0.3s ease;
-}
+} */
 
 .parallax-content h2 a:hover::after {
     width: 100%;
