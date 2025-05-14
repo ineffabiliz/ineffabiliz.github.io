@@ -20,6 +20,8 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background-color: rgb(1, 19, 13);
+    h2 {text-align: center;}
+    p {text-align: center;}
 }
 
 /* ===== HEADER SECTION ===== */
@@ -78,14 +80,7 @@ header h1 {
     font-weight: 700;
 }
 
-header .subtitle {
-    color: #555555;
-    font-size: 1.6rem;
-    text-shadow: none;
-    font-family: 'Bodoni Moda', serif;
-    font-style: italic;
-    font-weight: 400;
-}
+
 /* ===== MOBILE HEADER FIXES ===== */
 @media (max-width: 768px) {
     /* Adjust header height for mobile */
