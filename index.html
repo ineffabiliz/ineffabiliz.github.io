@@ -13,44 +13,6 @@
    <link rel="stylesheet" href="styles.css">
 
 </head>
-
- <script>
-document.querySelector('.email-copy').addEventListener('click', async function(e) {
-    e.preventDefault();
-    const email = this.getAttribute('data-email');
-    
-    try {
-        // Modern clipboard API
-        await navigator.clipboard.writeText(email);
-        showCopiedFeedback(this);
-    } catch (err) {
-        // Fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        textarea.style.position = 'fixed';  // Prevent scrolling
-        document.body.appendChild(textarea);
-        textarea.select();
-        
-        try {
-            document.execCommand('copy');
-            showCopiedFeedback(this);
-        } catch (err) {
-            alert('No se pudo copiar el email: ' + email); // Fallback message
-        } finally {
-            document.body.removeChild(textarea);
-        }
-    }
-});
-
-function showCopiedFeedback(button) {
-    const tooltip = button.querySelector('.tooltip');
-    const originalText = tooltip.textContent;
-    tooltip.textContent = '¡Copiado!';
-    setTimeout(() => {
-        tooltip.textContent = originalText;
-    }, 2000);
-}
-</script>
    
 <body>
     <!-- Navigation Bar -->
@@ -132,17 +94,17 @@ function showCopiedFeedback(button) {
     <div class="container">
         <h2>Contacto</h2>
         <div class="social-icons">
-            <!-- Instagram Icon -->
-            <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
-                <img src="imgs/ig.png" alt="Instagram">
-            </a>
-            
-            <!-- Email Display -->
-            <div class="email-display">
-                <img src="imgs/mail.png" alt="Email">
-                <span>ineffabiliz+terra@gmail.com</span>
-            </div>
-        </div>
+    <!-- Instagram Icon -->
+    <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
+        <img src="imgs/ig.png" alt="Instagram">
+    </a>
+    
+    <!-- Email Display -->
+    <a href="mailto:ineffabiliz+terra@gmail.com" class="social-icon email-display">
+        <img src="imgs/mail.png" alt="Email">
+        <span>ineffabiliz+terra@gmail.com</span>
+    </a>
+</div>
     </div>
 </section>
    
