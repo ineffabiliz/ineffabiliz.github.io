@@ -14,15 +14,33 @@
 
 </head>
 
-   <script>
-// Email copy function
-document.querySelector('.email-copy')?.addEventListener('click', function() {
+  <script>
+document.querySelector('.email-copy').addEventListener('click', async function(e) {
+    e.preventDefault(); // Prevent default button behavior
     const email = this.getAttribute('data-email');
-    navigator.clipboard.writeText(email).then(() => {
+    
+    try {
+        await navigator.clipboard.writeText(email);
         const tooltip = this.querySelector('.tooltip');
         tooltip.textContent = '¡Copiado!';
-        setTimeout(() => tooltip.textContent = 'Click para copiar', 2000);
-    });
+        setTimeout(() => {
+            tooltip.textContent = 'Click to copy';
+        }, 2000);
+    } catch (err) {
+        // Fallback for browsers without Clipboard API
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        const tooltip = this.querySelector('.tooltip');
+        tooltip.textContent = '¡Copiado!';
+        setTimeout(() => {
+            tooltip.textContent = 'Click to copy';
+        }, 2000);
+    }
 });
 </script>
    
