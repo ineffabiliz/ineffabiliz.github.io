@@ -452,52 +452,40 @@ footer {
     background: rgba(1, 19, 13, 0.1);
 }
 
-.social-icons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
 .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(1, 19, 13, 0.8);
-    transition: all 0.3s ease;
-    position: relative;
+    background: transparent !important; /* No background */
+    width: auto; /* Natural icon size */
+    height: auto;
+    border-radius: 0;
+    padding: 0.5rem;
 }
 
 .social-icon:hover {
-    background: rgba(1, 19, 13, 1);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.1);
+    background: transparent !important;
 }
 
 .social-icon img {
-    filter: brightness(0) invert(1);
-}
-
-/* Email Tooltip */
-.tooltip {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    opacity: 0;
+    filter: none; /* Keep original icon colors */
+    width: 28px; /* Slightly larger */
+    height: 28px;
+    opacity: 0.8;
     transition: opacity 0.3s;
-    white-space: nowrap;
 }
 
-.email-copy:hover .tooltip {
+.social-icon:hover img {
     opacity: 1;
+}
+
+/* Email tooltip adjustment */
+.email-copy {
+    position: relative;
+}
+
+.tooltip {
+    /* Keep your existing tooltip styles */
+    font-size: 0.7rem;
+    bottom: -25px;
 }
 
 
