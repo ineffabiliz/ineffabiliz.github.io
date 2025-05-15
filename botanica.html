@@ -73,83 +73,67 @@
 
     <!--============ Carrousel=========== -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('manual-carousel');
     const track = container.querySelector('.carousel-track');
-    const slides = container.querySelectorAll('.carousel-slide');
+    const originalSlides = Array.from(container.querySelectorAll('.carousel-slide'));
     const nextBtn = container.querySelector('.carousel-btn.next');
     const prevBtn = container.querySelector('.carousel-btn.prev');
-    
-    // Clone first and last slides for seamless looping
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
-    
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, slides[0]);
-    
-    let currentIndex = 1; // Start at first real slide
-    let visibleSlides = 1; // Default
-    
-    function updateVisibleSlides() {
-        if (window.innerWidth <= 900) visibleSlides = 1;
-        else visibleSlides = 1; // Keep your original setting
-    }
 
-    function updateCarousel() {
+    // Clone first and last slides
+    const firstClone = originalSlides[0].cloneNode(true);
+    const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, originalSlides[0]);
+
+    // Get updated slides list (including clones)
+    const slides = container.querySelectorAll('.carousel-slide');
+
+    let currentIndex = 1; // Start at first real slide
+
+    function updateCarousel(animate = true) {
         const slideWidth = slides[0].offsetWidth;
+        if (!animate) track.style.transition = 'none';
+        else track.style.transition = 'transform 0.5s ease';
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        track.style.transition = 'transform 0.5s ease';
     }
 
     function handleTransitionEnd() {
-        if (currentIndex === 0) {
-            track.style.transition = 'none';
-            currentIndex = slides.length;
-            updateCarousel();
-        } else if (currentIndex >= slides.length) {
-            track.style.transition = 'none';
+        if (slides[currentIndex].isSameNode(firstClone)) {
+            // Jump from clone of first to real first
             currentIndex = 1;
-            updateCarousel();
+            updateCarousel(false);
+        } else if (slides[currentIndex].isSameNode(lastClone)) {
+            // Jump from clone of last to real last
+            currentIndex = slides.length - 2;
+            updateCarousel(false);
         }
     }
 
     nextBtn.addEventListener('click', function() {
-        currentIndex++;
-        updateCarousel();
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
     });
 
     prevBtn.addEventListener('click', function() {
-        currentIndex--;
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     });
 
     track.addEventListener('transitionend', handleTransitionEnd);
-    window.addEventListener('resize', function() {
-        updateVisibleSlides();
-        updateCarousel();
-    });
+
+    window.addEventListener('resize', () => updateCarousel(false));
 
     // Initialize
-    updateVisibleSlides();
-    updateCarousel();
-    });
-    </script>
+    updateCarousel(false);
+});
+</script>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="social-icons">
-                <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
-                    <img src="imgs/ig.png" alt="Instagram">
-                </a>
-                <a href="mailto:ineffabiliz+terra@gmail.com" class="social-icon">
-                    <img src="imgs/mail.png" alt="Email">
-                    <span>ineffabiliz+terra@gmail.com</span>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
