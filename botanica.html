@@ -71,63 +71,68 @@
         <button class="carousel-btn next">❯</button>
     </div>
 
+    <!--============ Carrousel=========== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('manual-carousel');
-            const track = container.querySelector('.carousel-track');
-            const slides = container.querySelectorAll('.carousel-slide');
-            const nextBtn = container.querySelector('.carousel-btn.next');
-            const prevBtn = container.querySelector('.carousel-btn.prev');
-            
-            let currentIndex = 0;
-            let visibleSlides = 3; // Default for desktop
-            
-            function updateVisibleSlides() {
-                if (window.innerWidth <= 900 && window.innerWidth > 600) {
-                    visibleSlides = 2; // Tablet
-                } else if (window.innerWidth <= 600) {
-                    visibleSlides = 1; // Mobile
-                } else {
-                    visibleSlides = 3; // Desktop
-                }
-            }
-            
-            function updateCarousel() {
-                const slideWidth = slides[0].offsetWidth;
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                
-                // Disable buttons when at boundaries
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex >= slides.length - visibleSlides;
-            }
-            
-            nextBtn.addEventListener('click', function() {
-                if (currentIndex < slides.length - visibleSlides) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-            
-            prevBtn.addEventListener('click', function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                const lastIndex = currentIndex;
-                updateVisibleSlides();
-                // Adjust index if it would go out of bounds
-                currentIndex = Math.min(lastIndex, slides.length - visibleSlides);
-                updateCarousel();
-            });
-            
-            // Initialize
-            updateVisibleSlides();
+    const container = document.getElementById('manual-carousel');
+    const track = container.querySelector('.carousel-track');
+    const slides = container.querySelectorAll('.carousel-slide');
+    const nextBtn = container.querySelector('.carousel-btn.next');
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+    
+    // Clone first and last slides for seamless looping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+    
+    let currentIndex = 1; // Start at first real slide
+    let visibleSlides = 1; // Default
+    
+    function updateVisibleSlides() {
+        if (window.innerWidth <= 900) visibleSlides = 1;
+        else visibleSlides = 1; // Keep your original setting
+    }
+
+    function updateCarousel() {
+        const slideWidth = slides[0].offsetWidth;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        track.style.transition = 'transform 0.5s ease';
+    }
+
+    function handleTransitionEnd() {
+        if (currentIndex === 0) {
+            track.style.transition = 'none';
+            currentIndex = slides.length;
             updateCarousel();
-        });
+        } else if (currentIndex >= slides.length) {
+            track.style.transition = 'none';
+            currentIndex = 1;
+            updateCarousel();
+        }
+    }
+
+    nextBtn.addEventListener('click', function() {
+        currentIndex++;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', function() {
+        currentIndex--;
+        updateCarousel();
+    });
+
+    track.addEventListener('transitionend', handleTransitionEnd);
+    window.addEventListener('resize', function() {
+        updateVisibleSlides();
+        updateCarousel();
+    });
+
+    // Initialize
+    updateVisibleSlides();
+    updateCarousel();
+    });
     </script>
 
     <!-- Contact Section -->
