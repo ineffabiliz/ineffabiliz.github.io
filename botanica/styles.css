@@ -17,6 +17,9 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background-color: rgb(1, 19, 13);
+    h2 {text-align: center;}
+    p {text-align: center;}
+    h3 {text-align: center;}
 }
 h2 {
     font-size: 1.6rem;
