@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomía | Illustra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Smooch+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/anatomia/styles.css">
+</head>
+<body class="anatomia-page">
+    <!-- Simplified Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html#portafolios" class="nav-logo-link">
+                <img src="icono2.png" alt="Illustra" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#portafolios">Inicio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Custom Header -->
+    <header class="anatomia-header">
+        <div class="header-bg"</div>
+        <div class="header-overlay"></div>
+        <div class="container">
+            <h1>Ilustración Anatómica</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="anatomia-content">
+        <div class="container">
+            <section class="intro-text">
+                <h2>Arte al servicio de la ciencia</h2>
+                <br><br>
+                <p>Estas ilustraciones botánicas combinan rigor científico con sensibilidad artística,<br>
+                    siempre ajustando detalles de cada pieza según el propósito de su creación .</p>
+            </section>
+            
+       <!--     <div class="specimen-card">
+                <h3>Flora Nativa</h3>
+                <p>Documentación de especies autóctonas con énfasis en características distintivas para identificación científica.</p>
+            </div>
+            
+            <div class="specimen-card">
+                <h3>Detalles Anatómicos</h3>
+                <p>Representación de estructuras florales, hojas y sistemas radiculares con escalas de aumento.</p>
+            </div> -->
+        </div>
+        <div class="container">
+            <section class="intro-text">
+                <h2>Galería</h2>
+                </section>
+            </div>
+    </main>
+
+    <div class="carousel-container" id="manual-carousel">
+        <button class="carousel-btn prev">❮</button>
+        <div class="carousel-track">
+            <div class="carousel-slide"><img src="anatomia/imgs/1.png" alt="Image 1"></div>
+            <div class="carousel-slide"><img src="anatomia/imgs/2.png" alt="Image 2"></div>
+            <div class="carousel-slide"><img src="anatomia/imgs/3.png" alt="Image 3"></div>
+            <div class="carousel-slide"><img src="anatomia/imgs/4.png" alt="Image 4"></div>
+
+            <!-- Add more images as needed -->
+        </div>
+        <button class="carousel-btn next">❯</button>
+    </div>
+
+    <!--============ Carrousel=========== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('manual-carousel');
+    const track = container.querySelector('.carousel-track');
+    const originalSlides = Array.from(container.querySelectorAll('.carousel-slide'));
+    const nextBtn = container.querySelector('.carousel-btn.next');
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+
+    // Clone first and last slides
+    const firstClone = originalSlides[0].cloneNode(true);
+    const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, originalSlides[0]);
+
+    // Get updated slides list (including clones)
+    const slides = container.querySelectorAll('.carousel-slide');
+
+    let currentIndex = 1; // Start at first real slide
+
+    function updateCarousel(animate = true) {
+        const slideWidth = slides[0].offsetWidth;
+        if (!animate) track.style.transition = 'none';
+        else track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    function handleTransitionEnd() {
+        if (slides[currentIndex].isSameNode(firstClone)) {
+            // Jump from clone of first to real first
+            currentIndex = 1;
+            updateCarousel(false);
+        } else if (slides[currentIndex].isSameNode(lastClone)) {
+            // Jump from clone of last to real last
+            currentIndex = slides.length - 2;
+            updateCarousel(false);
+        }
+    }
+
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    track.addEventListener('transitionend', handleTransitionEnd);
+
+    window.addEventListener('resize', () => updateCarousel(false));
+
+    // Initialize
+    updateCarousel(false);
+});
+</script>
+
+    
+  <!-- Contact -->
+    <section id="contacto" class="contact">
+    <div class="container">
+        <h2>Contacto</h2>
+        <div class="social-icons">
+    <!-- Instagram Icon -->
+    <a href="https://instagram.com/inefable_velandia" target="_blank" class="social-icon">
+        <img src="imgs/ig.png" alt="Instagram">
+    </a>
+    
+    <!-- Email Display -->
+    <a href="mailto:ineffabiliz+terra@gmail.com" class="social-icon email-display">
+        <img src="imgs/mail.png" alt="Email">
+        <span>ineffabiliz+terra@gmail.com</span>
+    </a>
+    </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Illustra | Ilustración científica</p>
+        </div>
+    </footer>
+</body>
+</html>
