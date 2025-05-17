@@ -360,7 +360,7 @@ header h1 {
     height: 60vh;
     min-height: 400px;
     overflow: hidden;
-    margin: 4rem 0;
+    margin: 0rem 0;
 }
 
 .parallax-bg {
